@@ -11,7 +11,7 @@ const lolApiRouter = require("./routes/lolApi");
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3001",
+    origin: "https://chichchic.github.io",
     credentials: true,
   })
 );
