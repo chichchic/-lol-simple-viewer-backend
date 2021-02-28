@@ -1,16 +1,14 @@
-const path = require("path");
 const request = require("request");
 
-require("dotenv").config({ path: path.join(__dirname, "../../.env.local") });
-const LOL_API = process.env.LOL_API;
-exports.makePromiseRequest = function (uri) {
+exports.makePromiseRequest = function (uri, token) {
   return new Promise((resolve, reject) => {
     request(
       {
         uri,
         method: "GET",
         headers: {
-          "X-Riot-Token": LOL_API,
+          "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+          "X-Riot-Token": token,
         },
       },
       function (err, res, body) {
